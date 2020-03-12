@@ -8,7 +8,7 @@ export default createGlobalStyle`
   html {
     background-color: #fff;
     font-size: 18px; /* 1em = 18px */
-    font-family: 'Roboto', 'open sans';
+    font-family: 'Open Sans', 'Roboto';
   }
 
   html, body {
