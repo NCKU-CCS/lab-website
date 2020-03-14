@@ -6,6 +6,7 @@ import Contact from './components/contact';
 import Home from './components/home';
 import Members from './components/members';
 import Works from './components/works';
+import Nav from './components/navbar';
 // style
 import ResetStyle from "./theme/ResetStyles";
 import GlobalStyles from './theme/GlobalStyles';
@@ -15,6 +16,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Nav />
         <Switch>
           <Route path='/advisor' component={Advisor} />
           <Route path='/contact_us' component={Contact} />
