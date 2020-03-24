@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import useWindowWidth from '../../hooks/useWindowWidth';
 import linkConfig from '../../constants/routes';
+import Burger from './Burger';
 
 const Container = styled.div`
 	display: flex;
@@ -41,44 +42,6 @@ const ListContainer = styled.div`
 	}
 `;
 
-const Burger = styled.div`
-	display: none;
-
-	span {
-		width: 40px;
-		height: 5px;
-		margin: 2px 0px;
-		background-color: #50B58E;
-		transition-duration: 0.3s;
-	}
-
-	:hover {
-		cursor: pointer;
-	}
-
-	@media (max-width: 800px) {
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-
-		span:nth-child(1) {
-			transform: 
-				translateY(${props => props.isOpen ? '9px' : '0px'}) 
-				rotate(${props => props.isOpen ? '45deg' : '0deg'});
-		}
-
-		span:nth-child(2) {
-			opacity: ${props => props.isOpen ? 0 : 1};
-		}
-
-		span:nth-child(3) {
-			transform: 
-				translateY(${props => props.isOpen ? '-9px' : '0px'}) 
-				rotate(${props => props.isOpen ? '-45deg' : '0deg'});
-		}
-	}
-`;
-
 const Navlinks = () => {
 	const [burgerOpen, setBurgerOpen] = useState(false);
 	const width = useWindowWidth();
@@ -88,6 +51,10 @@ const Navlinks = () => {
 			setBurgerOpen(false);
 		}
 	}, [width]);
+
+	const handleClick = () => {
+		setBurgerOpen(!burgerOpen);
+	}
 	
 	return (
 		<Container>
@@ -105,11 +72,7 @@ const Navlinks = () => {
 					</li>
 				))}
 			</ListContainer>
-			<Burger isOpen={burgerOpen} onClick={() => {setBurgerOpen(!burgerOpen)}}>
-				<span />
-				<span />
-				<span />
-			</Burger>
+			<Burger isOpen={burgerOpen} handleClick={handleClick}/>
 		</Container>
 	);
 }
