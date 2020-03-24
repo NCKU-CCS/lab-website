@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import useWindowWidth from '../../hooks/useWindowWidth';
+import linkConfig from '../../constants/routes';
 
 const Container = styled.div`
 	display: flex;
@@ -81,14 +82,6 @@ const Burger = styled.div`
 const Navlinks = () => {
 	const [burgerOpen, setBurgerOpen] = useState(false);
 	const width = useWindowWidth();
-	
-	const linkConfig = [
-		{name: 'Home', ref: '/'},
-		{name: 'Our Works', ref: '/our_works'},
-		{name: 'Advisor', ref: '/advisor'},
-		{name: 'Members', ref: '/members'},
-		{name: 'Contact Us', ref: '/contact_us'},
-	];
 
 	useEffect(() => {
 		if(window.innerWidth > 800) {
