@@ -32,12 +32,14 @@ const ListContainer = styled.div`
 		display: inline-block;
 		transform: translateY(90px);
 		transition-duration: 0.3s;
+		transition-timing-function: ease-out;
 		li{
 			margin: 0.5rem 0px;
 			display: ${props => props.isOpen ? {} : 'none'}
 		}
 		a {
 			font-size: 1.25rem;
+			line-height: 1.5;
 		}
 	}
 `;

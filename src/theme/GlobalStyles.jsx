@@ -36,6 +36,6 @@ export default createGlobalStyle`
   }
   
   a {
-    color: inherit;
+    color: #4D4D4D;
   }
 `;
