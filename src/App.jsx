@@ -7,6 +7,7 @@ import Home from './components/home';
 import Members from './components/members';
 import Works from './components/works';
 import Nav from './components/navbar';
+import Footer from './components/footer';
 // style
 import ResetStyle from "./theme/ResetStyles";
 import GlobalStyles from './theme/GlobalStyles';
@@ -24,6 +25,7 @@ function App() {
           <Route path='/our_works' component={Works} />
           <Route path='/' exact component={Home} />
         </Switch>
+        <Footer />
       </div>
       <ResetStyle />
       <GlobalStyles />
